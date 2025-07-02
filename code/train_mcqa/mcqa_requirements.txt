@@ -1,0 +1,14 @@
+transformers==4.51.3
+argparse
+torch
+peft
+trl
+datasets
+huggingface-hub
+mistralai
+pandas
+tqdm
+re
+hashlib
+
+

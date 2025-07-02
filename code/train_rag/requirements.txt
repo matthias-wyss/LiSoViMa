@@ -1,0 +1,16 @@
+torch
+transformers>=4.51.3
+datasets
+tqdm
+peft
+trl
+langchain
+langchain-community
+langchain-huggingface
+huggingface_hub
+pypdf
+faiss-cpu
+accelerate
+lighteval>=0.10.0
+typing-extensions
+pymupdf
