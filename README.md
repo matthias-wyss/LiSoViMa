@@ -3,6 +3,7 @@
 **EPFL - Data Science MA2 - CS-552**  
 **Spring Semester 2025**  
 **Professor:** Antoine Bosselut
+
 **Authors:**  
 - Matthias Wyss
 - Sofia Taouhid
