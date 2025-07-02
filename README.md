@@ -1,16 +1,34 @@
-# MNLP M3 — Final Project Submission
+# 🧠 LiSoViMa: Lightweight and Specialized Virtual Assistant for STEM Education
 
-This repository contains the complete pipeline, codebase, and configuration files to reproduce and evaluate four fine-tuned language models developed during the Modern Natural Language Processing course project (M3):  
-- **MCQA model**
-- **Quantized model**
-- **Retrieval-Augmented Generation (RAG) model**
-- **Direct Preference Optimization (DPO) model**
+**LiSoViMa** is an efficient and modular educational assistant based on Qwen3-0.6B, fine-tuned for **multiple-choice question answering (MCQA)** in STEM domains. This project explores various optimization strategies including quantization, retrieval-augmented generation (RAG), and reward model alignment using direct preference optimization (DPO).
 
-We also include a pipeline for Supervised Fine-Tuning (SFT) on STEM data, which serves as a base for some of the above models.
+> 📘 Developed as part of an EPFL semester project in Spring 2025.
 
 ---
 
-## Repository Structure
+## 🚀 Project Overview
+
+LiSoViMa includes four LLM variants, each targeting a key challenge in educational AI:
+
+- 🎯 **MCQA model** — Fine-tuned with LoRA for high accuracy on STEM questions.
+- 💾 **Quantized model** — Reduces memory usage via 4-bit/8-bit quantization (e.g., QLoRA, GPTQ).
+- 📚 **RAG model** — Uses a FAISS-based retriever over a curated textbook corpus for context-aware answering.
+- 💡 **DPO model** — Optimizes response ranking based on human and synthetic preference data.
+
+---
+
+## 🧪 Performance Summary
+
+| Model       | Accuracy | Highlight                                 |
+|-------------|----------|-------------------------------------------|
+| MCQA (LoRA) | 55.1%    | Best balance between accuracy and cost    |
+| QLoRA       | 50.9%    | Top accuracy–efficiency ratio             |
+| RAG         | ~50%     | Limited gain due to noisy retrieval       |
+| DPO         | 81%      | Best alignment with human preferences     |
+
+---
+
+## 📁 Project Structure
 
 ```
 .
@@ -44,6 +62,69 @@ We also include a pipeline for Supervised Fine-Tuning (SFT) on STEM data, which 
 └── _test/
     └── run_tests.py              # Scripts to validate submission format
 ```
+
+---
+
+## 🧠 Training Datasets
+
+LiSoViMa is trained and evaluated on a diverse mix of datasets including:
+
+- 📘 MMLU (STEM-filtered)
+- 🧪 SciQ, ARC, AquaRat
+- 📚 28 STEM textbooks in Markdown format
+- 👥 Human and synthetic preference pairs (DPO)
+
+See `data/data_repo.json` for all Hugging Face dataset references.
+
+---
+
+## 📦 Model Variants & Configs
+
+| Model Type | Config File             | Hugging Face Model |
+|------------|--------------------------|---------------------|
+| MCQA       | `mcqa_model.yaml`        | [MNLP_M3_mcqa_model](https://huggingface.co/LinaSad/MNLP_M3_mcqa_model) |
+| Quantized  | `quantized_model.yaml`   | [MNLP_M3_quantized_model](https://huggingface.co/mkartofel/MNLP_M3_quantized_model) |
+| RAG        | `rag_model.yaml`         | [Qwen3-0.6B-Base-LoRA-SciQ-RAG](https://huggingface.co/NFX74/Qwen3-0.6B-Base-LoRA-SciQ-RAG) |
+| DPO        | `dpo_model.yaml`         | [MNLP_M3_dpo_model](https://huggingface.co/MNLP_M3_dpo_model) |
+
+---
+
+## 📜 Report & Evaluation
+
+The complete project report is available in `pdf/LiSoViMa.pdf`, which details:
+
+- Model architecture & training strategy  
+- Dataset construction  
+- Quantization benchmarks  
+- RAG retrieval and corpus curation  
+- DPO vs ORPO comparison  
+- Error analysis & ethical considerations  
+
+---
+
+## 👥 Contributors
+
+| Name           | Role                        |
+|----------------|-----------------------------|
+| Matthias Wyss  | RAG pipeline, retrieval eval |
+| Lina Sadgal    | MCQA fine-tuning             |
+| Vincent Fiszbin| Quantization & benchmarking  |
+| Sofia Taouhid  | DPO modeling & evaluation    |
+
+---
+
+## 📌 Future Work
+
+- Improve retrieval relevance in RAG  
+- Add multilingual support  
+- Introduce incremental hinting in answers  
+- Extend to open-ended or step-wise reasoning  
+
+---
+
+## ⚠️ Disclaimer
+
+This project is strictly academic and non-commercial. Some datasets used for RAG were sourced from unofficial materials and will not be released publicly.
 
 ---
 
