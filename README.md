@@ -1,12 +1,20 @@
-# 🧠 LiSoViMa: Lightweight and Specialized Virtual Assistant for STEM Education
+# 🧠 LiSoViMa: An Educational LLM Assistant
 
-**LiSoViMa** is an efficient and modular educational assistant based on Qwen3-0.6B, fine-tuned for **multiple-choice question answering (MCQA)** in STEM domains. This project explores various optimization strategies including quantization, retrieval-augmented generation (RAG), and reward model alignment using direct preference optimization (DPO).
-
-> 📘 Developed as part of an EPFL semester project in Spring 2025.
+**EPFL - Data Science MA2 - CS-552**  
+**Spring Semester 2025**  
+**Professor:** Antoine Bosselut 
+**Authors:**  
+- Matthias Wyss
+- Sofia Taouhid
+- Vincent Fiszbin
+- Lina Sadgal
 
 ---
 
-## 🚀 Project Overview
+## 📘 Project Overview
+
+**LiSoViMa** is an efficient and modular educational assistant based on Qwen3-0.6B, fine-tuned for **multiple-choice question answering (MCQA)** in STEM domains. This project explores various optimization strategies including quantization, retrieval-augmented generation (RAG), and reward model alignment using direct preference optimization (DPO).
+
 
 LiSoViMa includes four LLM variants, each targeting a key challenge in educational AI:
 
@@ -42,7 +50,7 @@ LiSoViMa includes four LLM variants, each targeting a key challenge in education
 │   ├── train_quantized.sh        # Training script for Quantized model
 │   ├── train_rag.sh              # Training script for RAG model
 │   ├── train_dpo.sh              # Training script for DPO model
-│   └── train_sft.sh           # Optional script to run the SFT pipeline
+│   └── train_sft.sh              # Optional script to run the SFT pipeline
 │
 ├── model_configs/
 │   ├── mcqa_model.yaml
@@ -53,14 +61,7 @@ LiSoViMa includes four LLM variants, each targeting a key challenge in education
 ├── data/
 │   └── data_repo.json            # Pointers to training datasets on Hugging Face Hub
 │
-├── pdf/
-│   └── LiSoViMa.pdf          # Final project report
-│
-├── _templates/
-│   └── mnlp_report_template.tex  # Report template used for the final project report
-│
-└── _test/
-    └── run_tests.py              # Scripts to validate submission format
+├── LiSoViMa.pdf                  # Final project report
 ```
 
 ---
@@ -91,7 +92,7 @@ See `data/data_repo.json` for all Hugging Face dataset references.
 
 ## 📜 Report & Evaluation
 
-The complete project report is available in `pdf/LiSoViMa.pdf`, which details:
+The complete project report is available in `LiSoViMa.pdf`, which details:
 
 - Model architecture & training strategy  
 - Dataset construction  
